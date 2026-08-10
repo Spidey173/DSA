@@ -19,3 +19,15 @@ def is_palindrome_slicing(arr):
     return arr == arr[::-1]
 
 print(is_palindrome_slicing("Madam"))
+
+# Way 3: Direct iteration without functions or slicing
+s = "Madam"
+s = s.lower()
+n = len(s)
+is_palindrome = True
+for i in range(n // 2):
+    if s[i] != s[n - 1 - i]:
+        is_palindrome = False
+        break
+
+print(is_palindrome)

@@ -21,7 +21,7 @@ def is_palindrome_slicing(arr):
 print(is_palindrome_slicing("Madam"))
 
 # Way 3: Direct iteration without functions or slicing
-s = "Madam"
+s = input("Enter a string: ")
 s = s.lower()
 n = len(s)
 is_palindrome = True

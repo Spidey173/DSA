@@ -1,6 +1,5 @@
 # Question: LeetCode 217 - Contains Duplicate
-# Given an integer array nums, return true if any value appears at least twice in the array, 
-# and return false if every element is distinct.
+# Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
 # Way 1: Brute Force (Compare Every Pair - Time: O(N^2), Space: O(1))
 def containsDuplicateBrute(nums):
@@ -30,9 +29,9 @@ print(containsDuplicateSet([1, 2, 3, 1]))
 def containsDuplicateDict(nums):
     freq = {}
     for num in nums:
-        if num in freq:
+        freq[num] = freq.get(num, 0) + 1
+        if freq[num] > 1:
             return True
-        freq[num] = 1
     return False
 
 print(containsDuplicateDict([1, 2, 3, 1]))

@@ -9,7 +9,21 @@ for i in range(n):
         if a[i] + a[j] == target:
             print([i, j])
 
-# Way 2: Function returning all possible outcomes
+# Way 2: Direct iteration using break to print only one outcome
+a = [1, 2, 3, 4, 5]
+target = 5
+n = len(a)
+found = False
+for i in range(n):
+    for j in range(i + 1, n):
+        if a[i] + a[j] == target:
+            print([i, j])
+            found = True
+            break
+    if found:
+        break
+
+# Way 3: Function returning all possible outcomes
 def twoSumAll(nums, target):
     ans = []
     n = len(nums)
@@ -21,7 +35,7 @@ def twoSumAll(nums, target):
 
 print(twoSumAll([1, 2, 3, 4, 5], 5))
 
-# Way 3: Function returning only the 1st outcome
+# Way 4: Function returning only the 1st outcome (using return statement)
 def twoSumFirst(nums, target):
     n = len(nums)
     for i in range(n):

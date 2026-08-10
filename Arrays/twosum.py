@@ -11,11 +11,14 @@ for i in range(n):
 
 # Way 2: Function-based approach (Brute Force)
 def twoSum(nums, target):
+    ans = []
     n = len(nums)
+
     for i in range(n):
         for j in range(i + 1, n):
             if nums[i] + nums[j] == target:
-                return [i, j]
+                ans.append([i, j])
 
-a = twoSum([2, 7, 11, 15], 18)
-print(a)
+    return ans
+
+print(twoSum([1,2,3,4,5], 5))

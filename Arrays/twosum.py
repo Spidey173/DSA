@@ -13,15 +13,14 @@ for i in range(n):
 a = [1, 2, 3, 4, 5]
 target = 5
 n = len(a)
-found = False
 for i in range(n):
     for j in range(i + 1, n):
         if a[i] + a[j] == target:
             print([i, j])
-            found = True
             break
-    if found:
-        break
+    else:
+        continue
+    break
 
 # Way 3: Function returning all possible outcomes
 def twoSumAll(nums, target):

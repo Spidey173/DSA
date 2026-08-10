@@ -43,3 +43,13 @@ def twoSumFirst(nums, target):
                 return [i, j]
 
 print(twoSumFirst([1, 2, 3, 4, 5], 5))
+
+# Way 5: Using Hash Map (One-pass, O(N) time complexity)
+def twoSumHashMap(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        if target - num in seen:
+            return [seen[target - num], i]
+        seen[num] = i
+
+print(twoSumHashMap([1, 2, 3, 4, 5], 5))

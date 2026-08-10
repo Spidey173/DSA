@@ -2,8 +2,19 @@
 # Given an integer array nums, return true if any value appears at least twice in the array, 
 # and return false if every element is distinct.
 
-# Way 1: Hash Set (Optimal - Time: O(N), Space: O(N))
-# This is the best general interview solution because it has an early exit.
+# Way 1: Brute Force (Compare Every Pair - Time: O(N^2), Space: O(1))
+def containsDuplicateBrute(nums):
+    n = len(nums)
+    for i in range(n):
+        for j in range(i + 1, n):
+            if nums[i] == nums[j]:
+                return True
+    return False
+
+print(containsDuplicateBrute([1, 2, 3, 1]))
+
+
+# Way 2: Hash Set (Optimal - Time: O(N), Space: O(N))
 def containsDuplicateSet(nums):
     seen = set()
     for num in nums:
@@ -12,27 +23,34 @@ def containsDuplicateSet(nums):
         seen.add(num)
     return False
 
-print("Way 1 (Set) [1, 2, 3, 1]:", containsDuplicateSet([1, 2, 3, 1]))
-print("Way 1 (Set) [1, 2, 3, 4]:", containsDuplicateSet([1, 2, 3, 4]))
+print(containsDuplicateSet([1, 2, 3, 1]))
 
 
-# Way 2: Sorting (Space Optimized - Time: O(N log N), Space: O(1))
-# Use this if the interviewer restricts memory usage (O(1) auxiliary space).
+# Way 3: Dictionary / Hash Map (Time: O(N), Space: O(N))
+def containsDuplicateDict(nums):
+    freq = {}
+    for num in nums:
+        if num in freq:
+            return True
+        freq[num] = 1
+    return False
+
+print(containsDuplicateDict([1, 2, 3, 1]))
+
+
+# Way 4: Sorting (Time: O(N log N), Space: O(N) extra or O(1) if in-place)
 def containsDuplicateSort(nums):
-    nums.sort()  # Sorts the array in-place
-    for i in range(1, len(nums)):
-        if nums[i] == nums[i - 1]:
+    arr = sorted(nums)  # Using sorted() avoids modifying the original input list
+    for i in range(1, len(arr)):
+        if arr[i] == arr[i - 1]:
             return True
     return False
 
-print("Way 2 (Sort) [1, 2, 3, 1]:", containsDuplicateSort([1, 2, 3, 1]))
-print("Way 2 (Sort) [1, 2, 3, 4]:", containsDuplicateSort([1, 2, 3, 4]))
+print(containsDuplicateSort([1, 2, 3, 1]))
 
 
-# Way 3: Pythonic Shorthand (Time: O(N), Space: O(N))
-# Good to mention as a quick Python-specific approach.
+# Way 5: Pythonic Shorthand (Time: O(N), Space: O(N))
 def containsDuplicateShorthand(nums):
     return len(nums) != len(set(nums))
 
-print("Way 3 (Shorthand) [1, 2, 3, 1]:", containsDuplicateShorthand([1, 2, 3, 1]))
-print("Way 3 (Shorthand) [1, 2, 3, 4]:", containsDuplicateShorthand([1, 2, 3, 4]))
+print(containsDuplicateShorthand([1, 2, 3, 1]))

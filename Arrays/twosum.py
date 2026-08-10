@@ -48,8 +48,9 @@ print(twoSumFirst([1, 2, 3, 4, 5], 5))
 def twoSumHashMap(nums, target):
     seen = {}
     for i, num in enumerate(nums):
-        if target - num in seen:
-            return [seen[target - num], i]
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], i]
         seen[num] = i
 
 print(twoSumHashMap([1, 2, 3, 4, 5], 5))

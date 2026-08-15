@@ -33,3 +33,20 @@ class Solution2:
 
 sol2 = Solution2()
 print(sol2.maxProfit([7, 1, 5, 3, 6, 4]))
+
+
+
+
+# Way 3: Direct iteration without classes or functions
+prices = [7, 1, 5, 3, 6, 4]
+min_price = prices[0]  # Initialize with the first price
+max_profit = 0
+
+for price in prices:
+    if price < min_price:
+        min_price = price
+    profit = price - min_price
+    if profit > max_profit:
+        max_profit = profit
+
+print(max_profit)

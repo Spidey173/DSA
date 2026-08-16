@@ -41,3 +41,32 @@ def is_anagram_counter(s, t):
     return Counter(s) == Counter(t)
 
 print(is_anagram_counter("anagram", "nagaram"))
+
+# Way 4: Direct iteration using sorted() (simplest direct way)
+s = "anagram"
+t = "nagaram"
+
+is_anagram = sorted(s.lower()) == sorted(t.lower())
+print(is_anagram)
+
+# Way 5: Direct iteration using a Dictionary (Time: O(N), Space: O(1) auxiliary)
+s = "anagram"
+t = "nagaram"
+
+s = s.lower()
+t = t.lower()
+
+is_anagram_dict = True
+if len(s) != len(t):
+    is_anagram_dict = False
+else:
+    count = {}
+    for char in s:
+        count[char] = count.get(char, 0) + 1
+    for char in t:
+        if char not in count or count[char] == 0:
+            is_anagram_dict = False
+            break
+        count[char] -= 1
+
+print(is_anagram_dict)

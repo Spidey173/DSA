@@ -47,3 +47,18 @@ else:
     result = b
 
 print(result)
+
+# Way 5: Iterative using a, b, and c variables
+n = 9
+if n <= 1:
+    result = n
+else:
+    a = 0
+    b = 1
+    for _ in range(2, n + 1):
+        c = a + b
+        a = b
+        b = c
+    result = b
+
+print(result)

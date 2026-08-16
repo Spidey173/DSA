@@ -35,3 +35,15 @@ def fib_recursive(n):
     return fib_recursive(n - 1) + fib_recursive(n - 2)
 
 print(fib_recursive(9))
+
+# Way 4: Direct iteration without functions
+n = 9
+if n <= 1:
+    result = n
+else:
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    result = b
+
+print(result)

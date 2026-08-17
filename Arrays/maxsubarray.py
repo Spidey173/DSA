@@ -1,4 +1,4 @@
-# Question: LeetCode 53 - Maximum Subarray (Kadane's Algorithm)
+# Question: Maximum Subarray (Kadane's Algorithm)
 # Find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
 # Way 1: Kadane's Algorithm using max() (Time: O(N), Space: O(1))

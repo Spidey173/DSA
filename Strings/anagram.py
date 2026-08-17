@@ -1,4 +1,4 @@
-# Question: LeetCode 242 - Valid Anagram
+# Question: Valid Anagram
 # Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
 # Way 1: Sorting (Conceptually Simplest - Time: O(N log N), Space: O(N))

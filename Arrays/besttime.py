@@ -1,4 +1,4 @@
-# Question: LeetCode 121 - Best Time to Buy and Sell Stock
+# Question: Best Time to Buy and Sell Stock
 # Find the maximum profit you can achieve by buying on one day and selling in the future.
 
 # Way 1: One-Pass with Explicit If Statements (Time: O(N), Space: O(1))

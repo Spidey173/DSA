@@ -1,4 +1,4 @@
-# Question: LeetCode 217 - Contains Duplicate
+# Question: Contains Duplicate
 # Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 
 # Way 1: Brute Force (Compare Every Pair - Time: O(N^2), Space: O(1))

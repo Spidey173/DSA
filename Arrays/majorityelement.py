@@ -1,4 +1,4 @@
-# Question: LeetCode 169 - Majority Element
+# Question: Majority Element
 # Given an array nums of size n, return the majority element (the element that appears more than n // 2 times).
 
 # Way 1: Boyer-Moore Voting Algorithm (Optimal - Time: O(N), Space: O(1))

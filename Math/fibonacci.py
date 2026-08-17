@@ -1,4 +1,4 @@
-# Question: LeetCode 509 - Fibonacci Number
+# Question: Fibonacci Number
 # The Fibonacci numbers form a sequence where each number is the sum of the two preceding ones, starting from 0 and 1.
 # F(n) = F(n - 1) + F(n - 2), for n > 1.
 

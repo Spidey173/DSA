@@ -1,7 +1,4 @@
-# Concept: Leap Year Check
-# A year is a leap year if:
-# 1. It is divisible by 4.
-# 2. But if it is divisible by 100, it must also be divisible by 400.
+# Leap Year
 
 year = int(input("Enter a year: "))
 

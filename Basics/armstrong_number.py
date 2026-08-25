@@ -1,17 +1,21 @@
 # Armstrong Number Check
 
 num = int(input("Enter a number: "))
+
+# Find the number of digits
+power = len(str(num))
+
+# Calculate the sum of digits raised to the power
 temp = num
-num_str = str(num)
-num_digits = len(num_str)
-sum_powers = 0
+sum_val = 0
 
 while temp > 0:
     digit = temp % 10
-    sum_powers += digit ** num_digits
+    sum_val += digit ** power
     temp //= 10
 
-if sum_powers == num:
-    print(num, "is an Armstrong Number")
+# Check Armstrong number
+if sum_val == num:
+    print(num, "is an Armstrong number")
 else:
-    print(num, "is NOT an Armstrong Number")
+    print(num, "is not an Armstrong number")

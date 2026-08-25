@@ -1,11 +1,23 @@
 # Reverse a Number
 
-num = int(input("Enter a number: "))
+# Way 1: Iterative Loop (Simplest for positive numbers)
+num1 = int(input("Enter a number: "))
 reverse = 0
+temp1 = num1
 
-while num > 0:
-    digit = num % 10
+while temp1 > 0:
+    digit = temp1 % 10
     reverse = reverse * 10 + digit
-    num //= 10
+    temp1 //= 10
 
-print("Reversed number:", reverse)
+print("Way 1 Reversed:", reverse)
+
+
+# Way 2: Using Recursion
+def reverse_recursive(n, rev=0):
+    if n == 0:
+        return rev
+    return reverse_recursive(n // 10, rev * 10 + (n % 10))
+
+num2 = int(input("Enter a number: "))
+print("Way 2 Reversed:", reverse_recursive(num2))

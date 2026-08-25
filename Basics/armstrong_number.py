@@ -1,20 +1,20 @@
 # Armstrong Number Check
 
 # Way 1: Iterative Check (Time: O(log n), Space: O(1))
-num1 = int(input("Enter a number: "))
-power1 = len(str(num1))
-temp = num1
+num = int(input("Enter a number: "))
+power = len(str(num))
+temp = num
 sum_val = 0
 
 while temp > 0:
     digit = temp % 10
-    sum_val += digit ** power1
+    sum_val += digit ** power
     temp //= 10
 
-if sum_val == num1:
-    print("Way 1:", num1, "is an Armstrong number")
+if sum_val == num:
+    print(num, "is an Armstrong number")
 else:
-    print("Way 1:", num1, "is not an Armstrong number")
+    print(num, "is not an Armstrong number")
 
 
 # Way 2: Recursive Check (Time: O(log n), Space: O(log n) call stack)
@@ -23,10 +23,10 @@ def armstrong_sum(n, power):
         return 0
     return ((n % 10) ** power) + armstrong_sum(n // 10, power)
 
-num2 = int(input("Enter a number: "))
-power2 = len(str(num2))
+num = int(input("Enter a number: "))
+power = len(str(num))
 
-if armstrong_sum(num2, power2) == num2:
-    print("Way 2:", num2, "is an Armstrong number")
+if armstrong_sum(num, power) == num:
+    print(num, "is an Armstrong number")
 else:
-    print("Way 2:", num2, "is not an Armstrong number")
+    print(num, "is not an Armstrong number")

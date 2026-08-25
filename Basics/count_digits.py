@@ -1,14 +1,21 @@
 # Count Digits in a Number
 
 num = int(input("Enter a number: "))
-temp = abs(num)  # Handle negative numbers
 count = 0
+temp = num
 
-if temp == 0:
-    count = 1
-else:
-    while temp > 0:
-        count += 1
-        temp //= 10
+while temp > 0:
+    temp //= 10
+    count += 1
 
 print("Number of digits:", count)
+
+
+# Using Recursion
+def count_recursive(n):
+    if n == 0:
+        return 0
+    return 1 + count_recursive(n // 10)
+
+num = int(input("Enter a number: "))
+print("Number of digits:", count_recursive(num))

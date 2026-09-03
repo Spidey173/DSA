@@ -1,37 +1,64 @@
+# ============================================
 # Palindrome Number Check
+# ============================================
 
-# Way 1: Iterative Check (Time: O(log n), Space: O(1))
-num1 = int(input("Enter a number: "))
+# --------------------------------------------
+# Way 1: Iterative Check
+# Time Complexity: O(log n)
+# Space Complexity: O(1)
+# --------------------------------------------
 
-if num1 < 0:
-    print("Way 1:", num1, "is NOT a Palindrome")
+num = int(input("Enter a number: "))
+
+if num < 0:
+    print(num, "is NOT a Palindrome")
 else:
-    temp = num1
-    reversed_num = 0
-    while temp > 0:
-        last_digit = temp % 10
-        reversed_num = (reversed_num * 10) + last_digit
-        temp //= 10
-        
-    if num1 == reversed_num:
-        print("Way 1:", num1, "is a Palindrome")
+    temp = num
+    reverse = 0
+    while num > 0:
+        digit = num % 10
+        reverse = reverse * 10 + digit
+        num //= 10
+
+    if temp == reverse:
+        print("Palindrome")
     else:
-        print("Way 1:", num1, "is NOT a Palindrome")
+        print("Not Palindrome")
 
 
-# Way 2: Recursive Check (Time: O(log n), Space: O(log n) call stack)
-def reverse_recursive(n, rev=0):
-    if n == 0:
-        return rev
-    return reverse_recursive(n // 10, rev * 10 + (n % 10))
+# --------------------------------------------
+# Way 2: Using a Function
+# Time Complexity: O(log n)
+# Space Complexity: O(1)
+# --------------------------------------------
 
-def is_palindrome_recursive(num):
+def is_palindrome(num):
+    original = num
+    reverse = 0
     if num < 0:
         return False
-    return num == reverse_recursive(num)
+    while num > 0:
+        reverse = reverse * 10 + num % 10
+        num //= 10
+    return original == reverse
 
-num2 = int(input("Enter a number: "))
-if is_palindrome_recursive(num2):
-    print("Way 2:", num2, "is a Palindrome")
+n = int(input("Enter number: "))
+
+if is_palindrome(n):
+    print("Palindrome")
 else:
-    print("Way 2:", num2, "is NOT a Palindrome")
+    print("Not Palindrome")
+
+
+# --------------------------------------------
+# Way 3: Using String Slicing
+# Time Complexity: O(n)
+# Space Complexity: O(n)
+# --------------------------------------------
+
+num = int(input("Enter a number: "))
+
+if str(num) == str(num)[::-1]:
+    print("Palindrome")
+else:
+    print("Not Palindrome")

@@ -1,6 +1,8 @@
 # ============================================
 # Palindrome Number Check
 # ============================================
+# Updated implementation details for clean structure
+
 
 # --------------------------------------------
 # Way 1: Iterative Check
